@@ -25,7 +25,13 @@ function updateCountdown() {
     const { years, months, days } = calculateTimeDifference(startDate, currentDate);
 
     // Hiển thị kết quả
-    document.getElementById('countdown').textContent = `${years} năm, ${months} tháng, ${days} ngày`;
+    if(years <1){
+        document.getElementById('countdown').textContent = `${months} tháng, ${days} ngày`;
+    }
+    else{
+        document.getElementById('countdown').textContent = `${years} năm, ${months} tháng, ${days} ngày`;
+    }
+    
 
     // Hiển thị ngày bắt đầu yêu
     const startDateString = startDate.toLocaleDateString('vi-VN');
